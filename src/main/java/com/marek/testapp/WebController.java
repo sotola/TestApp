@@ -1,34 +1,22 @@
 package com.marek.testapp;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import javax.validation.Valid;
 
 @Controller
-public class WebController implements WebMvcConfigurer{
-
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/results").setViewName("results");
-    }
-
+public class WebController {
     @GetMapping("/")
-    public String showForm(PersonForm personForm) {
+    public String personFormForm(Model model) {
+        model.addAttribute("personForm", new PersonForm());
         return "form";
     }
 
     @PostMapping("/")
-    public String checkPersonInfo(@Valid PersonForm PersonForm, BindingResult bindingResult) {
-
-        if (bindingResult.hasErrors()) {
-            return "form";
-        }
-
-        return "redirect:/results";
+    public String personFormSubmit(@ModelAttribute PersonForm personForm) {
+        return "results";
     }
 }

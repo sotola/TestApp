@@ -40,4 +40,9 @@ public class PersonForm {
     public void setDate(Integer date) {
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return getFirstName() + ' ' + getLastName() + " from " + getCountry() + " on " + getDate();
+    }
 }
