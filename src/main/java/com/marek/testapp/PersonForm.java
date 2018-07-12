@@ -1,13 +1,11 @@
 package com.marek.testapp;
 
-import java.util.Date;
-
 public class PersonForm {
 
     private String firstName;
     private String lastName;
-    private String country;
-    private Date date;
+    private String country = "United States";
+    private String date;
 
     public String getFirstName() {
         return firstName;
@@ -33,13 +31,11 @@ public class PersonForm {
         this.country = country;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+    public void setDate(String date) { this.date = date; }
 
     @Override
     public String toString() {
