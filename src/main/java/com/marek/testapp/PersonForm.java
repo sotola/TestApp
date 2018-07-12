@@ -9,8 +9,6 @@ public class PersonForm {
     private String country;
     private Date date;
 
-    private Integer age;
-
     public String getFirstName() {
         return firstName;
     }
