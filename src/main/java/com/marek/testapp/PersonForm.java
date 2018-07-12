@@ -1,11 +1,13 @@
 package com.marek.testapp;
 
+import java.util.Date;
+
 public class PersonForm {
 
     private String firstName;
     private String lastName;
     private String country;
-    private Integer date;
+    private Date date;
 
     private Integer age;
 
@@ -33,11 +35,11 @@ public class PersonForm {
         this.country = country;
     }
 
-    public Integer getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(Integer date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
