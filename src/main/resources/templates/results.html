@@ -5,8 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1>Results</h1>
 <p th:text="${personForm.toString()}" />
-<a href="/">Submit another message</a>
+<div>
+    <ul>
+        <li th:each="file : ${files}">
+            <a th:href="${file}" th:text="${file}" />
+        </li>
+    </ul>
+</div>
+<a href="/">Submit another file</a>
 </body>
 </html>

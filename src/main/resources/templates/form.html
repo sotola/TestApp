@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:form="http://www.w3.org/1999/html">
 <body>
-<form action="#" th:action="@{/}" th:object="${personForm}" method="post">
+<form action="#" th:action="@{/}" th:object="${personForm}" method="post" enctype="multipart/form-data">
     <table>
         <tr>
             <td>First Name:</td>
@@ -25,6 +25,7 @@
             <td>Date:</td>
             <td><input type="date" th:field="*{date}" /></td>
         </tr>
+        <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
         <tr>
             <td><input type="submit" value="Submit" /></td>
         </tr>
